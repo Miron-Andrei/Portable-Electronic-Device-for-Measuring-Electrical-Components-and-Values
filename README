@@ -1,8 +1,7 @@
 The full diploma thesis is attached in PDF format (Romanian language).
 Even though the document is in Romanian, it contains detailed explanations, schematics, and references that support the project. 
 For international readers, the README provides a short English summary of the objectives, components, results, and challenges.
-
-I am open to any feedback !!!
+Also i added the main code used in my project. I am open to any feedback !!!
 
 1. Objective and Motivation
 I set out to build a compact, portable electronic device that measures common electrical components—specifically resistance, capacitance, and ambient light intensity (illuminance). 
@@ -25,7 +24,7 @@ Power system: Li‑Po 18650 battery (3.7 V) with charging/management module TP40
 Auxiliary parts: Wiring, connectors, PCB 
 Junction Box
 
-The electrical schematics and photos (including a demo of the device in use) are included in the attached materials.
+The electrical schematics and photos (including a short demo of the device in use) are included in the attached materials.
 
 3. Accuracy and Usability Features
 Typical measurement error ranges from 1% to 5%, depending on the measurement range and connection quality.
@@ -42,11 +41,11 @@ For illuminance I had no reference meter for comparison, but the BH1750 sensor r
 The biggest challenge was the software interface: implementing all functions, updating values in real time, and reliably returning to the main menu. 
 Early versions frequently became stuck in void loop; restructuring the code into a clear state machine and adding proper button debouncing fixed most issues.
 Hardware problems included unstable readings from breadboard wiring and poor contacts; moving to soldered connections greatly improved stability.
-Power management was another lesson the TP4056 module expects a proper input and the battery configuration must match the module limits
+Power management was another lesson the TP4056 module expects a proper input and the battery configuration must match the module limits.
 
 I also learned how challenging soldering and mechanical assembly can be without specialized tools, and how important careful layout and secure mounting are for a compact handheld device.
 
-I attached the Arduino Forums I discussed my problems.
+I attached the Arduino Forums where I discussed my problems.
 
 https://forum.arduino.cc/t/programming-a-button-to-go-back-from-a-while-menu-thing/1325404?u=frostygamerro
 
