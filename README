@@ -3,3 +3,23 @@ I wanted to build a compact portable electronic device that measures electrical 
 offering a user-friendly interface, easy to use, and leaving space for future extensions. 
 
 I had a box full of electronic components and no convenient tool to identify or measure them quickly. Rather than buying a commercial instrument, I decided to design and build a custom handheld meter to meet my needs.
+
+2. Project Overview and Components used
+The device is a multifunction handheld meter based on an Arduino Nano. It reads sensor signals, performs measurements with simple conditioning circuits, displays results on a compact screen, and is controlled via physical buttons.
+All these components are inside a junction box used in electrical house circuits in which I cut some openings for the display, buttons and ports.
+
+Components used and the electrical scheme can be observed better in the pictures I attached, also there is a Demo.
+
+Main components used:
+Microcontroller: Arduino Nano
+Light sensor: BH1750 for ambient light intensity measurements
+Display: TFT ST7735 
+User input: Physical pushbuttons for menu navigation and function selection
+Resistance measurement circuit: Reference resistors ( 1 kOhm ) and unknown resistances
+Capacitance measurement circuit: Timing-based on charge/discharge circuits to estimate capacitance
+Power system: Li‑Po 18650 battery (3.7 V) with charging/management module TP4056
+Auxiliary parts: Wiring, connectors, PCB 
+Junction Box.
+
+
+
