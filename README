@@ -1,14 +1,18 @@
-1. Objective and Motivation
-I wanted to build a compact portable electronic device that measures electrical components, specifically resistance, capacitance, and ambient light intensity ( illuminance ),
-offering a user-friendly interface, easy to use, and leaving space for future extensions. 
+The full diploma thesis is attached in PDF format (Romanian language).
+Even though the document is in Romanian, it contains detailed explanations, schematics, and references that support the project. 
+For international readers, the README provides a short English summary of the objectives, components, results, and challenges.
 
-I had a box full of electronic components and no convenient tool to identify or measure them quickly. Rather than buying a commercial instrument, I decided to design and build a custom handheld meter to meet my needs.
+I am open to any feedback !!!
+
+1. Objective and Motivation
+I set out to build a compact, portable electronic device that measures common electrical components—specifically resistance, capacitance, and ambient light intensity (illuminance). 
+The goal was a user‑friendly handheld meter with a simple interface and room for future extensions.
+
+I had a box full of electronic parts and no convenient tool to identify or measure them quickly. Rather than buying a commercial instrument, I designed and built a custom meter tailored to my needs.
 
 2. Project Overview and Components used
-The device is a multifunction handheld meter based on an Arduino Nano. It reads sensor signals, performs measurements with simple conditioning circuits, displays results on a compact screen, and is controlled via physical buttons.
-All these components are inside a junction box used in electrical house circuits in which I cut some openings for the display, buttons and ports.
-
-Components used and the electrical scheme can be observed better in the pictures I attached, also there is a Demo.
+The device is a multifunction handheld meter based on an Arduino Nano. It reads sensor signals, performs measurements using simple conditioning circuits, displays results on a compact screen, and is controlled via physical pushbuttons.
+All electronics are mounted inside a standard electrical junction box with cutouts for the display, buttons, and ports.
 
 Main components used:
 Microcontroller: Arduino Nano
@@ -19,7 +23,36 @@ Resistance measurement circuit: Reference resistors ( 1 kOhm ) and unknown resis
 Capacitance measurement circuit: Timing-based on charge/discharge circuits to estimate capacitance
 Power system: Li‑Po 18650 battery (3.7 V) with charging/management module TP4056
 Auxiliary parts: Wiring, connectors, PCB 
-Junction Box.
+Junction Box
+
+The electrical schematics and photos (including a demo of the device in use) are included in the attached materials.
+
+3. Accuracy and Usability Features
+Typical measurement error ranges from 1% to 5%, depending on the measurement range and connection quality.
+For example, a 3.3 kΩ resistor measured about 3.23 kΩ, and a 100 Ω resistor measured 99.89 Ω. A 10 kΩ resistor was reported as 8.94 kΩ, which is under the reliable range for the current setup; for out‑of‑range or unreliable readings the device displays "Unknown resistor".
+Accuracy is best when the measured value is near the reference resistor (1 kΩ).
+Each measured resistor is also shown with a color code on the display to speed up identification and sorting. 
+
+For capacitance I tested values from 100 pF up to 470 µF (16 V) with similar 1–5% errors.
+These errors are acceptable in practice because component tolerances listed on datasheets commonly range from 1% to 10% depending on the part and conditions.
+
+For illuminance I had no reference meter for comparison, but the BH1750 sensor responds and appears to function correctly.
+
+4. Challenges and Lessons Learned
+The biggest challenge was the software interface: implementing all functions, updating values in real time, and reliably returning to the main menu. 
+Early versions frequently became stuck in void loop; restructuring the code into a clear state machine and adding proper button debouncing fixed most issues.
+Hardware problems included unstable readings from breadboard wiring and poor contacts; moving to soldered connections greatly improved stability.
+Power management was another lesson the TP4056 module expects a proper input and the battery configuration must match the module limits
+
+I also learned how challenging soldering and mechanical assembly can be without specialized tools, and how important careful layout and secure mounting are for a compact handheld device.
+
+I attached the Arduino Forums I discussed my problems.
+
+https://forum.arduino.cc/t/programming-a-button-to-go-back-from-a-while-menu-thing/1325404?u=frostygamerro
+
+https://forum.arduino.cc/t/capacitor-and-resistance-tester-problem/1380050?u=frostygamerro
+
+
 
 
 
